@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CRUD oprations</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body>
+    <div class="main w-full min-h-screen bg-zinc-800 p-10 text-white">
+        <a class="text-blue-600 block" href="/" >Go back to home</a>
+        <a class="text-blue-600" href="/read">Show users</a>
+        <h1 class="text-3xl mb-4">Update User</h1>
+
+        <form action="/update/<%=userData._id%>" method="post">
+            <input class="px-2 block mb-3 w-1/4 py-3 outline-none bg-transparent border-2 rounded-md"  type="text" name="name" value="<%=userData.name%>">
+            <input class="px-2 block mb-3 w-1/4 py-3 outline-none bg-transparent border-2 rounded-md"  type="text" name="email" value="<%=userData.email%>">
+            <input class="px-2 block mb-3 w-1/4 py-3 outline-none bg-transparent border-2 rounded-md"  type="text" name="image"  value="<%=userData.image%>">
+            <input class="bg-yellow-500 text-white p-2 rounded-md" type="submit" value="Update User">
+        </form>
+    </div>
+
+</body>
+
+</html>

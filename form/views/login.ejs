@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login page</title>
+    <link rel="stylesheet" href="stylesheets/5.css">
+</head>
+
+<body>
+    <!--form tag-->
+    <form action="/login" class="login" method="post">
+        <!--Actual container-->
+        <div class="container">
+            <h2>Log in</h2>
+            <!--For email input-->
+            <label for="email" class="input-box">Email
+                <span class="s">Need an account? <a href="/" id="sign-in">sign in</a></span>
+                <input type="email" id="email" name="email">
+            </label>
+            <!--for password input-->
+            <label for="password" class="input-box">Password
+                <input type="password" id="password" name="password">
+            </label>
+            <!--button for login-->
+            <input type="submit" class="login-btn" value="Login"> 
+            <span id="s">OR</span>
+            <!--button for facebook -->
+            <button class="Facebook">
+                <img src="images/pngwing.com (2).png" alt=""><a href="#" target="_blank">Continue with Facebook</a>
+            </button>
+            <!--button for googal-->
+            <button class="googal">
+                <img src="images/pngwing.com.png" alt=""><span><a href="#" target="_blank">Continue with Google</a>
+            </button>
+            <span class="forget"><a href="6.html">Forget password?</a></span>
+        </div>
+    </form>
+
+</body>
+
+</html>

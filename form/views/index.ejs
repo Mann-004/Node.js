@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign up page</title>
+    <link rel="stylesheet" href="stylesheets/04.css">
+</head>
+
+<body>
+    <form action="/signIn" class="sign-up" method="post">
+        <div class="form">
+            <h2>Sign up</h2>
+
+            <div class="input-box">
+                <label for="email">Email <span>Already have an account? <a href="/login">Login</a></span>
+                    <input type="email" id="email" name="email">
+            </div>
+            <div class="input-box"> 
+                <label for="password">Password
+                    <input type="password" id="password" name="password">
+                </label>
+            </div>
+            <input class="btn" type="submit" value="Sign in for free">
+            <!--sapn-->
+            <span>OR</span>
+            <div class="or">
+                <button class="facebook"><img src="images/pngwing.com (2).png" alt=""><a href=""><span> Continue
+                        with Facebook</span></a>
+                </button>
+            </div>
+            <!--div for Gooogal button-->
+            <div class="or">
+                <button class="googal">
+                    <img src="images/pngwing.com.png" alt="" ><a href="">
+                    <span>Continue with Google</span></a>
+                </button>
+            </div>
+            <!--div for copyright as footer-->
+            <footer>By clicking the “Sign up for free” button or using any of the social login options, you are creating
+                an account <a href="#" target="_blank">Terms of Service</a> and <a href="#" target="_blank">Privacy Policy</a>
+            </footer>
+        </div>
+    </form>
+</body>
+</html>

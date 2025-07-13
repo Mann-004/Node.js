@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body>
+    <div class="main w-full min-h-screen bg-zinc-900 text-white p-10">
+        <a href="/logout" class="bg-red-500 px-2 py-1 rounded-md float-right mb-3">Logout</a>
+        <div class="flex items-end gap-3">
+            <div class="w-20 h-20 rounded-full overflow-hidden">
+                <a href="/profile/upload">
+                    <img src="/images/upload/<%=user.profile%>" class="w-full h-full object-cover ">
+                </a>
+            </div>
+            <h1 class="text-2xl text-zinc-300 font-bold"><%=user.username%></h1>
+        </div>
+        <h1 class="text-2xl mt-3">Create your post</h1>
+        <form action="/post" method="post">
+            <textarea class="resize-none border-1 bg-zinc-700 w-2/4 px-4 py-3 rounded-md mt-4 scroll-hidden"
+                placeholder="Write anything in your mind" name="content"></textarea>
+            <input class="px-3 py-2 bg-blue-600 rounded-md outline-none block mt-2" type="submit" value="Create post">
+        </form>
+        <div class="post flex flex-wrap gap-3 mt-10">
+            <%user.posts.reverse().forEach(function(post){%>
+                <div class=" w-2/4 bg-zinc-700 text-white px-3 py-2 rounded-md">
+                    <div class="flex items-end gap-3">
+                        <div class="w-10 h-10 rounded-full overflow-hidden">
+                            <a href="/profile/upload">
+                                <img src="/images/upload/<%=user.profile%>" class="w-full h-full object-cover ">
+                            </a>
+                        </div>
+                        <h1 class="text-xl text-blue-400"><%=user.username%></h1>
+                    </div>
+                    
+                    <!-- <span class="text-blue-400">
+                        <%= user.username%>
+                    </span> -->
+                    <p class="text-zinc-100 mt-4"><%= post.content%></p>
+                    <p class="block text-zinc-300  mt-8"><%=post.likes.length%> likes</p>
+                    <a class="text-blue-400 " href="/like/<%=post._id%>">
+                        <%=post.likes.indexOf(user._id) ===-1  ?"Like" : "Unlike"%>
+                    </a>
+                    <a href="/delete/<%=post._id%>"class="text-red-500  float-right ">Delete</a>
+                    <a class="text-zinc-300 float-right mr-3" href="/edit/<%=post._id%>">Edit</a>
+                </div>
+
+            <% }) %>
+        </div>
+    </div>
+</body>
+
+</html>
